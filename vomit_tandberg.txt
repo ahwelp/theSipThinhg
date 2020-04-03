@@ -1,0 +1,58 @@
+INVITE sip:{local_ip} SIP/2.0
+Via: SIP/2.0/UDP {remote_ip}:5060;branch=z9hG4bK9e9a2335b765912e52c7abd8100124f4.1;rport
+Call-ID: f3706459bc960afa@{remote_ip}
+CSeq: 100 INVITE
+Contact: <sip:{remote_ip}:5060>
+From: <sip:{remote_ip}>;tag=9a70c3e6a22cdb69
+To: <sip:{local_ip}>
+Max-Forwards: 70
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,INFO,OPTIONS,REFER,NOTIFY
+User-Agent: TANDBERG/257 (TE4.0.0.246968)
+Supported: replaces,100rel,timer,gruu,path,outbound
+Session-Expires: 1800
+Content-Type: application/sdp
+Content-Length: 1301
+
+v=0
+o=tandberg 5 3 IN IP4 {remote_ip}
+s=-
+c=IN IP4 {remote_ip}
+b=AS:384
+t=0 0
+m=audio 2344 RTP/AVP 100 101 102 9 18 11 8 0 103
+b=TIAS:64000
+a=rtpmap:100 MP4A-LATM/90000
+a=fmtp:100 profile-level-id=24;object=23;bitrate=64000
+a=rtpmap:101 G7221/16000
+a=fmtp:101 bitrate=32000
+a=rtpmap:102 G7221/16000
+a=fmtp:102 bitrate=24000
+a=rtpmap:9 G722/8000
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=yes
+a=rtpmap:11 L16/16000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:103 telephone-event/8000
+a=fmtp:103 0-15
+a=sendrecv
+m=video 2346 RTP/AVP 97 98 99 34 31
+b=TIAS:384000
+a=rtpmap:97 H264/90000
+a=fmtp:97 profile-level-id=42800d;max-br=906;max-mbps=40500;max-fs=1344;max-smbps=40500
+a=rtpmap:98 H264/90000
+a=fmtp:98 profile-level-id=42800d;max-br=906;max-mbps=40500;max-fs=1344;max-smbps=40500;packetization-mode=1
+a=rtpmap:99 H263-1998/90000
+a=fmtp:99 custom=1024,768,4;custom=1024,576,4;custom=800,600,4;cif4=2;custom=720,480,2;custom=640,480,2;custom=512,288,1;cif=1;custom=352,240,1;qcif=1;maxbr=3840
+a=rtpmap:34 H263/90000
+a=fmtp:34 cif4=2;cif=1;qcif=1;maxbr=3840
+a=rtpmap:31 H261/90000
+a=fmtp:31 cif=1;qcif=1;maxbr=3840
+a=rtcp-fb:* nack pli
+a=sendrecv
+a=content:main
+a=label:11
+a=answer:full
+m=application 2348 RTP/AVP 104
+a=rtpmap:104 H224/4800
+a=sendrecv

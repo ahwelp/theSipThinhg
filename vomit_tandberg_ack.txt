@@ -1,0 +1,11 @@
+ACK sip:{local_ip}:5060 SIP/2.0
+CSeq: 1 ACK
+Via: SIP/2.0/UDP {remote_ip}:5060;branch=z9hG4bK147aa495-a61d-1910-8ac1-b0f1ecb8186c;rport
+From: <sip:{user}@{remote_ip}>;tag=34779895-a61d-1910-8abf-b0f1ecb8186c
+Call-ID: 34779895-a61d-1910-8ac0-b0f1ecb8186c@DESKTOP-O585I03
+To: <sip:{local_ip}>;tag=6d44daef07fd2f52
+Contact: <sip:{user}@{remote_ip}>
+Content-Length: 0
+Max-Forwards: 70
+
+
